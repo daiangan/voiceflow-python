@@ -3,6 +3,11 @@
 This is an unofficial Python package for an easy use of the [Voiceflow API.](https://www.voiceflow.com/api/dialog-manager)
 
 #### Basic usage
+In your virtual environment:
+```text
+pip install voiceflow
+```
+Then in your Python code:
 ```python
 import os
 from voiceflow import Voiceflow

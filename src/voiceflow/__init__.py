@@ -1,34 +1,19 @@
 from dataclasses import dataclass, field
-import requests
+
+from .interact import Interact
 
 
 @dataclass
 class Voiceflow:
     api_key: str
     user_id: str
-    api_base_url: str = 'https://general-runtime.voiceflow.com'
-    headers: dict = field(init=False)
+    interact: Interact = field(init=False)
 
     def __post_init__(self):
         self.headers = {
             'Authorization': self.api_key,
         }
-
-    def interact(
-            self,
-            user_input: str,
-    ):
-        body = {
-            'action': {
-                'type': 'text',
-                'payload': user_input,
-            }
-        }
-
-        response = requests.post(
-            f'{self.api_base_url}/state/user/{self.user_id}/interact',
-            json=body,
-            headers=self.headers,
+        self.interact = Interact(
+            api_key=self.api_key,
+            user_id=self.user_id,
         )
-
-        print(response.json())

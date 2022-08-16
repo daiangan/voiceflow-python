@@ -7,6 +7,9 @@
 *.py[cod]
 *$py.class
 
+# Project #
+tests/library_tests.py
+
 # Distribution / packaging
 .Python build/
 develop-eggs/

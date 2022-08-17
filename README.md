@@ -14,7 +14,7 @@ from voiceflow import Voiceflow
 
 vf = Voiceflow(
     api_key=os.getenv('VOICEFLOW_API_KEY'),
-    user_id='abc123',
+    user_id='abc123'
 )
 
 # Launch the agent
@@ -31,6 +31,21 @@ __config__:
 ```python
 vf_response = vf.interact.launch(config={'stripSSML': False})
 ```
+Default __config__ values:
+```python
+{
+    'tts': False,
+    'stripSSML': True,
+    'stopAll': True,
+    'stopTypes': [],
+    'excludeTypes': [
+        'block',
+        'debug',
+        'flow',
+    ]
+}
+```
+
 
 <br>
 <br>

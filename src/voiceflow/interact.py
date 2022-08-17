@@ -19,12 +19,14 @@ DEFAULT_CONFIG = {
 class Interact:
     api_key: str
     user_id: str
+    version_id: str
     api_base_url: str = 'https://general-runtime.voiceflow.com'
     headers: dict = field(init=False)
 
     def __post_init__(self):
         self.headers = {
             'Authorization': self.api_key,
+            'versionID': self.version_id,
         }
 
     def interact_request(self, body: dict) -> dict:

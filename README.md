@@ -25,6 +25,15 @@ vf_response = vf.interact.text(user_input='hello')
 
 
 ```
+Pass the version of your Voiceflow project to contact.
+It can be __development__ (default) or __production__.
+```python
+vf = Voiceflow(
+    api_key=os.getenv('VOICEFLOW_API_KEY'),
+    user_id='abc123',
+    version_id='production'
+)
+```
 
 You can also call __launch()__ or __text()__ with your custom
 __config__:

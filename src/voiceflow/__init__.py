@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Literal
 
+from .defaults import VERSION_ID
 from .interact import Interact
 
 
@@ -8,7 +9,7 @@ from .interact import Interact
 class Voiceflow:
     api_key: str
     user_id: str
-    version_id: Literal['production', 'development'] = 'development'
+    version_id: Literal['production', 'development'] = VERSION_ID
     interact: Interact = field(init=False)
 
     def __post_init__(self):

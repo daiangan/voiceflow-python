@@ -55,6 +55,24 @@ Default __config__ values:
 }
 ```
 
+#### User State:
+```python
+# Fetch the user's current state
+vf_response = vf.user_state.fetch()
+
+# NotImplemented:
+# Update the user's current state.
+# Delete all state and session data for user.
+```
+
+#### Variables:
+```python
+variables = {
+    'test1': 'one',
+    'test2': 2,
+}
+vf_response = vf.variables.update(variables=variables)
+```
 
 <br>
 <br>

@@ -2,8 +2,8 @@ from dataclasses import dataclass, field
 from typing import Literal
 
 from .defaults import VERSION_ID
-from .user import UserState
 from .interact import Interact
+from .user import UserState
 from .variables import Variable
 
 

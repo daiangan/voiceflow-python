@@ -1,7 +1,6 @@
 from dataclasses import dataclass, field
 
 import requests
-from typing import Literal
 
 from .defaults import (
     API_BASE_URL,

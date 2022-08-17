@@ -17,8 +17,19 @@ vf = Voiceflow(
     user_id='abc123',
 )
 
-vf.interact(user_input='hello')
+# Launch the agent
+vf_response = vf.interact.launch()
 
+# Send a simple text input
+vf_response = vf.interact.text(user_input='hello')
+
+
+```
+
+You can also call __launch()__ or __text()__ with your custom
+__config__:
+```python
+vf_response = vf.interact.launch(config={'stripSSML': False})
 ```
 
 <br>

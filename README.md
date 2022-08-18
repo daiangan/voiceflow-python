@@ -60,9 +60,11 @@ Default __config__ values:
 # Fetch the user's current state
 vf_response = vf.user_state.fetch()
 
+# Delete all state and session data for user.
+vf_response = vf.user_state.delete()
+
 # NotImplemented:
 # Update the user's current state.
-# Delete all state and session data for user.
 ```
 
 #### Variables:

@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from json.decoder import JSONDecodeError
 
 import requests
 
@@ -31,8 +32,18 @@ class UserState:
     def update() -> dict:
         return NotImplemented
 
-    @staticmethod
-    def delete() -> dict:
-        return NotImplemented
+    def delete(self) -> dict:
+        delete_response = {}
+        response = requests.delete(
+            f'{API_BASE_URL}/state/user/{self.user_id}',
+            headers=self.headers,
+        )
+
+        try:
+            delete_response = response.json()
+        except JSONDecodeError:
+            pass
+
+        return delete_response
 
     __call__ = fetch
